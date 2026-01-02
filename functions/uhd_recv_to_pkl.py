@@ -17,6 +17,6 @@ def uhd_recv_to_pkl_v1(shouldsave,samp_rate,num_samps,data_dir):
         if not os.path.exists(data_dir+"/tests"):
             os.makedirs(data_dir+"/tests")
 
-        raw_data.pd.DataFrame.to_pickle(data_dir+f"/tests/samples_data_{num_samps:.0f}points.pkl")
+        pd.DataFrame(raw_data).to_pickle(data_dir+f"/tests/samples_data_{num_samps:.0f}points.pkl")
 
     return num_samps, raw_data
